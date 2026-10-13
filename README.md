@@ -5,7 +5,7 @@ Un curso para crear tus propios productos digitales con inteligencia artificial,
 | Sesión | Tema | Video | Guía y taller |
 |---|---|---|---|
 | 1 · 8 oct | Tu primera página web con IA | [▶ YouTube](https://youtu.be/qUCmcmCVIgk) | [Guía paso a paso](sesiones/01/) |
-| 2 · 15 oct | Más archivos, más automatización | Próximamente | Próximamente |
+| 2 · 15 oct | Tu página con memoria: guarda datos | Próximamente | Próximamente |
 
 ## Cómo usar las guías
 
@@ -15,4 +15,4 @@ Un curso para crear tus propios productos digitales con inteligencia artificial,
 
 ---
 
-El Vibecoding Nivelatorio es una iniciativa personal vinculada al semillero de investigación de Vibe Coding de la Universidad de Antioquia. No es un curso oficial de la universidad.
+El Vibecoding Nivelatorio es una iniciativa personal para ayudar a quienes están entrando al mundo del vibecoding.

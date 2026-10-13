@@ -240,4 +240,8 @@ Comparte el link de tu página (`https://TU-USUARIO.github.io/hello-world`) ante
 
 ## Próxima sesión
 
-Más archivos y más automatización: en vez de copiar y pegar en GitHub, el agente hará el commit y el *push* por ti.
+**Sesión 2 · Tu página con memoria: guarda datos.** Tu página va a poder guardar información, como los mensajes que te dejen tus visitantes, en una base de datos.
+
+---
+
+[← Volver al inicio](../../)

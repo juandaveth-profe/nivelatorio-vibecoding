@@ -240,7 +240,7 @@ Comparte el link de tu página (`https://TU-USUARIO.github.io/hello-world`) ante
 
 ## Próxima sesión
 
-**Sesión 2 · Tu página con memoria: guarda datos.** Tu página va a recibir mensajes de tus visitantes, con un formulario de contacto o con un pequeño blog, y los va a guardar en una base de datos.
+**Sesión 2 · Tu página con memoria: guarda datos.** Vas a agregarle a tu página un formulario de contacto: tus visitantes te dejan un mensaje y queda guardado en una base de datos.
 
 ---
 

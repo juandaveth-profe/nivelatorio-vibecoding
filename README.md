@@ -5,7 +5,7 @@ Un curso para crear tus propios productos digitales con inteligencia artificial,
 | Sesión | Tema | Video | Guía y taller |
 |---|---|---|---|
 | 1 · 8 oct | Tu primera página web con IA | [▶ YouTube](https://youtu.be/qUCmcmCVIgk) | [Guía paso a paso](sesiones/01/) |
-| 2 · 15 oct | Tu página con memoria: guarda datos | Próximamente | Próximamente |
+| 2 · 15 oct | Dale memoria a tu landing page | Próximamente | Próximamente |
 
 ## Cómo usar las guías
 

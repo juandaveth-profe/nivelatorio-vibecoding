@@ -6,16 +6,40 @@ video: https://youtu.be/qUCmcmCVIgk
 fecha: 2026-10-08
 ---
 
+[Inicio](../../) · **Sesión 1** · Sesión 2 (15 oct, próximamente)
+
 # Sesión 1 · Tu primera página web con IA
 
 Al terminar esta guía vas a tener una página web tuya, publicada en internet y con un link que puedes compartir. No necesitas saber programar.
 
 > ▶ **Video completo de la clase:** [Ver en YouTube](https://youtu.be/qUCmcmCVIgk). Cada paso tiene un enlace al minuto exacto.
 
+## Contenido
+
+1. [Antes de empezar](#antes)
+2. [La idea de la clase: caja de cambios](#idea)
+3. [Tres palabras que vas a usar](#palabras)
+4. [Parte 1 · Tu "Hola mundo" en tu computador](#parte-1)
+   - [Paso 1. Crea tu carpeta y ábrela en Antigravity](#paso-1)
+   - [Paso 2. Crea `index.html`](#paso-2)
+   - [Paso 3. Tus primeros cambios con el agente](#paso-3)
+5. [Parte 2 · Súbelo a internet](#parte-2)
+   - [Paso 4. Crea tu repositorio en GitHub](#paso-4)
+   - [Paso 5. Sube `index.html` y haz tu primer commit](#paso-5)
+   - [Paso 6. Publica con GitHub Pages](#paso-6)
+6. [Repaso](#repaso)
+7. [Taller para la sesión 2](#taller)
+8. [Problemas frecuentes](#problemas)
+9. [Próxima sesión](#proxima)
+
+<a id="antes"></a>
+
 ## Antes de empezar
 
 - [ ] Una cuenta en [github.com](https://github.com)
 - [ ] [Antigravity](https://antigravity.google) instalado en tu computador
+
+<a id="idea"></a>
 
 ## La idea de la clase: caja de cambios, no piloto automático
 
@@ -30,6 +54,8 @@ Hay dos formas de trabajar con inteligencia artificial:
 
 En este curso manejamos con caja de cambios.
 
+<a id="palabras"></a>
+
 ## Tres palabras que vas a usar
 
 [▶ 0:40](https://youtu.be/qUCmcmCVIgk?t=40)
@@ -42,7 +68,11 @@ En este curso manejamos con caja de cambios.
 
 ---
 
+<a id="parte-1"></a>
+
 ## Parte 1 · Tu "Hola mundo" en tu computador
+
+<a id="paso-1"></a>
 
 ### Paso 1. Crea tu carpeta y ábrela en Antigravity
 
@@ -59,6 +89,8 @@ En el IDE hay tres zonas:
 - **Centro, el código.**
 - **Derecha, el agente:** el chat con la IA.
 
+<a id="paso-2"></a>
+
 ### Paso 2. Crea `index.html`
 
 [▶ 3:03](https://youtu.be/qUCmcmCVIgk?t=183)
@@ -70,6 +102,8 @@ En el IDE hay tres zonas:
    ```
 3. Guarda (`Cmd + S` en Mac, `Ctrl + S` en Windows).
 4. Ve a la carpeta y haz doble clic en `index.html`. Se abre en tu navegador.
+
+<a id="paso-3"></a>
 
 ### Paso 3. Tus primeros cambios con el agente
 
@@ -99,7 +133,11 @@ El truco es **seleccionar** el pedazo de código que quieres cambiar y pedirle a
 
 ---
 
+<a id="parte-2"></a>
+
 ## Parte 2 · Súbelo a internet
+
+<a id="paso-4"></a>
 
 ### Paso 4. Crea tu repositorio en GitHub
 
@@ -112,6 +150,8 @@ El truco es **seleccionar** el pedazo de código que quieres cambiar y pedirle a
 5. No toques nada más. **Create repository**.
 
 ![Crear el repositorio: nombre, descripción y README activado](img/04-nuevo-repo.jpg)
+
+<a id="paso-5"></a>
 
 ### Paso 5. Sube `index.html` y haz tu primer commit
 
@@ -128,6 +168,8 @@ El truco es **seleccionar** el pedazo de código que quieres cambiar y pedirle a
 ![Tu primer commit, con su identificador único](img/05-commit.jpg)
 
 Cada commit tiene un identificador único (en el video, `bdf2651`). Con él puedes decirle a otra persona: "mira el commit bdf2651".
+
+<a id="paso-6"></a>
 
 ### Paso 6. Publica con GitHub Pages
 
@@ -153,6 +195,8 @@ Cada commit tiene un identificador único (en el video, `bdf2651`). Con él pued
 
 ---
 
+<a id="repaso"></a>
+
 ## Repaso
 
 [▶ 11:18](https://youtu.be/qUCmcmCVIgk?t=678)
@@ -164,6 +208,8 @@ Cada commit tiene un identificador único (en el video, `bdf2651`). Con él pued
 - Trabaja de a pedacitos. Un solo prompt grande crea cientos de líneas; si no entiendes lo que se agrega, terminas con *código espagueti*.
 
 ---
+
+<a id="taller"></a>
 
 ## 🛠 Taller para la sesión 2
 
@@ -229,6 +275,8 @@ Comparte el link de tu página (`https://TU-USUARIO.github.io/hello-world`) ante
 
 ---
 
+<a id="problemas"></a>
+
 ## Problemas frecuentes
 
 | Lo que pasa | Qué hacer |
@@ -238,10 +286,12 @@ Comparte el link de tu página (`https://TU-USUARIO.github.io/hello-world`) ante
 | La página se ve sin colores ni diseño | Falta subir el archivo de estilos, o tiene un nombre distinto al de tu computador. |
 | El agente cambió algo que no le pedí | Deshaz el cambio y pídelo de nuevo, seleccionando solo el pedazo que quieres cambiar. |
 
+<a id="proxima"></a>
+
 ## Próxima sesión
 
 **Sesión 2 · Tu página con memoria: guarda datos.** Vas a agregarle a tu página un formulario de contacto: tus visitantes te dejan un mensaje y queda guardado en una base de datos.
 
 ---
 
-[← Volver al inicio](../../)
+[↑ Volver al contenido](#contenido) · [← Volver al inicio](../../)

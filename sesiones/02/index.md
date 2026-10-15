@@ -27,8 +27,9 @@ Hoy tu página deja de mostrar solo contenido fijo: le agregas un formulario de 
    - [Paso 4. Crea tu proyecto en Firebase](#paso-4)
    - [Paso 5. Crea tu base de datos y protégela](#paso-5)
    - [Paso 6. Conecta tu página con Firebase](#paso-6)
-   - [Paso 7. El formulario de contacto](#paso-7)
-   - [Paso 8. Pruébalo y publícalo](#paso-8)
+   - [Paso 7. Guarda los mensajes en Firebase](#paso-7)
+   - [Paso 8. Agradece en pantalla](#paso-8)
+   - [Paso 9. Publícalo](#paso-9)
 5. [Parte 3 · ¿Qué es una base de datos?](#parte-3)
 6. [Taller para la sesión 3](#taller)
 7. [Problemas frecuentes](#problemas)
@@ -198,63 +199,66 @@ Registras tu página en Firebase y, a cambio, te da un bloque de código con la 
 
 <a id="paso-7"></a>
 
-### Paso 7. El formulario de contacto
+### Paso 7. Guarda los mensajes en Firebase
 
-Con caja de cambios: primero el formulario, después la conexión.
+Primero, que los datos lleguen a Firebase. Que se vea bonito va en el paso 8.
 
-**a. El formulario.** Pídele al agente:
-
-```
-Antes del footer, agrega una sección de contacto con un formulario:
-nombre, correo y mensaje, y un botón "Enviar". Usa el mismo estilo del resto de la página.
-```
-
-Revisa que se vea bien en la pestaña de Live Server. Todavía no guarda nada.
-
-**b. La conexión.** Ahora pídele:
+1. Pídele al agente:
 
 ```
-Conecta este formulario con mi base de datos de Firebase (Firestore).
-
-Cómo hacerlo:
-- Solo HTML, CSS y JavaScript puro (vanilla). Sin React, sin frameworks, sin npm, sin instalar nada.
-- Pon el código en un archivo nuevo, app.js, y conéctalo al final de index.html con <script type="module" src="app.js"></script>.
-- Importa el SDK web de Firebase desde el CDN oficial (https://www.gstatic.com/firebasejs/...).
-- No cambies el diseño ni los textos que ya tiene la página.
-
-Qué debe hacer:
-- Cada envío se guarda en la colección "mensajes" con los campos nombre, correo, mensaje y fecha (la hora del servidor, con serverTimestamp). Exactamente esos nombres, sin tildes ni campos extra.
-- Mientras se guarda, desactiva el botón y muestra "Enviando...".
-- Cuando se guarde, cambia el formulario por: "¡Gracias por escribirme, [nombre]! Te respondo pronto a tu correo [correo]."
-- Pon el nombre y el correo como texto (textContent), no como HTML.
-- Si falla, muestra "No se pudo enviar, intenta de nuevo" y escribe el error en la consola.
-
-Este es el bloque que me dio Firebase (pásalo a app.js, no lo dejes en index.html):
-[pega aquí todo el bloque que copiaste en el paso 6]
+Antes del footer, agrega una sección de contacto con un formulario: nombre, correo, mensaje y un botón "Enviar". Usa el mismo estilo del resto de la página.
+Conéctalo con Firebase usando JavaScript puro (sin npm ni frameworks), en un archivo nuevo app.js, enlazado al final de index.html con <script type="module" src="app.js"></script>.
+Usa este bloque de Firebase y agrega Firestore desde el mismo CDN y la misma versión:
+[pega aquí el bloque que copiaste en el paso 6]
+Cada envío se guarda en la colección "mensajes" con los campos nombre, correo, mensaje y fecha (con serverTimestamp). Exactamente esos nombres.
 ```
 
-Los nombres de la colección y de los campos tienen que ser **exactamente** esos: las reglas del paso 5 solo aceptan esos.
+2. El agente va a crear `app.js` y a tocar `index.html`. Revisa y acepta. No hace falta entender el código: **confía en la magia**.
+3. En la pestaña de Live Server, llena el formulario con tus datos y haz clic en **Enviar**.
+4. Ahora consúltalo en Firebase:
+   - En el menú de la izquierda, haz clic en **Bases de datos y almacenamiento** → **Firestore**.
+   - En la pestaña **Datos** aparece la colección `mensajes`. Haz clic en ella.
+   - Haz clic en el documento que aparece (tiene un nombre raro, como `aB3xK9...`). A la derecha ves tus campos: `nombre`, `correo`, `mensaje` y `fecha`.
 
-> **¿Y las reglas?** Siguen igual. El agradecimiento usa lo que la persona acaba de escribir en el formulario, no lo lee de la base de datos. Por eso tu página puede saludarla por su nombre sin que nadie pueda leer los mensajes de los demás.
-
-<a id="paso-8"></a>
-
-### Paso 8. Pruébalo y publícalo
-
-1. En la pestaña de Live Server, llena el formulario y envía. Debe aparecer el agradecimiento con tu nombre y tu correo.
-2. En Firebase, ve a **Firestore Database → Datos**. Aparece la colección `mensajes` con tu mensaje adentro.
-
-> ✅ **Victoria 2.** Tu página tiene memoria: lo que alguien escribe queda guardado.
+> ✅ **Victoria 2.** Tu página tiene memoria: lo que alguien escribe queda guardado en tu base de datos.
 >
 > 📝 Marca tu estado en el [pad](https://pad.riseup.net/p/vibe-coding-sesion2-15oct).
 
-3. Súbelo, como en el paso 3:
+Los nombres de la colección y de los campos tienen que ser **exactamente** esos: las reglas del paso 5 solo aceptan esos. Si no aparece nada, mira [Problemas frecuentes](#problemas).
+
+> **¿Perdiste el bloque de Firebase?** Haz clic en el engranaje ⚙ junto a **Descripción general** → **Configuración del proyecto**. Baja hasta **Tus apps**, elige **CDN** y cópialo con el botón de copiar.
+
+<a id="paso-8"></a>
+
+### Paso 8. Agradece en pantalla
+
+Los datos ya se guardan, pero quien escribe no se entera. Ahora le respondes en la página.
+
+1. Pídele al agente:
+
+```
+Cuando el mensaje se guarde en Firebase, cambia el formulario por: "¡Gracias por escribirme, [nombre]! Te respondo pronto a tu correo [correo]."
+Pon el nombre y el correo con textContent, no como HTML.
+Mientras se guarda, desactiva el botón y muestra "Enviando...". Si falla, muestra "No se pudo enviar, intenta de nuevo".
+```
+
+2. En la pestaña de Live Server, envía otro mensaje. Debe aparecer el agradecimiento con tu nombre y tu correo.
+3. En Firestore, refresca la colección `mensajes`: ahora hay **dos** documentos.
+
+> **¿Y las reglas?** Siguen igual. El agradecimiento usa lo que la persona acaba de escribir en el formulario, no lo lee de la base de datos. Por eso tu página puede saludarla por su nombre sin que nadie pueda leer los mensajes de los demás.
+
+<a id="paso-9"></a>
+
+### Paso 9. Publícalo
+
+1. Súbelo, como en el paso 3:
 
 ```
 Haz commit de mis cambios con el mensaje "Agregué formulario de contacto" y súbelos a GitHub.
 ```
 
-4. Cuando **Actions** tenga ✅, abre tu página publicada y envía otro mensaje. Míralo llegar a Firebase.
+2. Cuando **Actions** tenga ✅, abre tu página publicada y envía un mensaje desde ahí.
+3. Míralo llegar a Firestore.
 
 🎉 Tu página ya no solo muestra: también escucha.
 
@@ -283,16 +287,9 @@ Sin base de datos, tu página es un cartel: todos ven lo mismo. Con base de dato
 ## 🛠 Taller para la sesión 3
 
 1. **Dale estilo a tu sección de contacto.** Selecciónala y pídele al agente cambios pequeños, como en la sesión 1. Usa tus colores de Coolors.
-2. **Valida antes de enviar.** Pídele al agente que no deje enviar el formulario si el mensaje está vacío o si el correo no tiene `@`.
-3. **Reto: agrega un campo nuevo**, por ejemplo "¿Cómo te enteraste de mi proyecto?". Ojo: las reglas solo aceptan los cuatro campos de hoy. Vas a tener que agregar el nombre del campo nuevo a la lista de `hasOnly` en las reglas. Si el formulario deja de guardar, ya sabes dónde mirar.
+2. **Reto: agrega un campo nuevo**, por ejemplo "¿Cómo te enteraste de mi proyecto?". Ojo: las reglas solo aceptan los cuatro campos de hoy. Vas a tener que agregar el nombre del campo nuevo a la lista de `hasOnly` en las reglas. Si el formulario deja de guardar, ya sabes dónde mirar.
 
 Recuerda subir cada cambio con un commit.
-
-### Entrega
-
-Antes de la sesión 3, comparte:
-- El link de tu página con el formulario funcionando.
-- Una captura de la consola de Firebase con al menos un mensaje guardado.
 
 ---
 

@@ -6,7 +6,7 @@ video: https://youtu.be/qUCmcmCVIgk
 fecha: 2026-10-08
 ---
 
-[Inicio](../../) · **Sesión 1** · Sesión 2 (15 oct, próximamente)
+[Inicio](../../) · **Sesión 1** · [Sesión 2](../02/)
 
 # Sesión 1 · Tu primera página web con IA
 

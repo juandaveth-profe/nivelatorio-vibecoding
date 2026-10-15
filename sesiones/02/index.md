@@ -119,7 +119,12 @@ Si Git me pide nombre y correo, configúralos con: [tu nombre] y [el correo de t
 ```
 
 1. El agente va a pedir permiso para ejecutar comandos. Revisa y dale **Aceptar**.
-2. La primera vez, se puede abrir el navegador para que autorices tu cuenta de GitHub. Autoriza.
+2. La primera vez, tienes que conectar Antigravity con tu cuenta de GitHub. Es posible que pase esto:
+   - Te pide tu **nombre** y tu **correo**: usa el correo de tu cuenta de GitHub.
+   - La terminal te muestra un **código de 8 caracteres** (como `ABCD-1234`) y se abre el navegador. Pega ese código en GitHub y autoriza.
+   - GitHub te manda **otro código a tu correo** (el que tienes asociado a GitHub). Búscalo en tu bandeja y pégalo en GitHub.
+
+   Son dos códigos distintos: uno sale en la terminal y el otro llega a tu correo.
 3. En GitHub, mira tu repositorio: aparece el commit con tu mensaje. En la pestaña **Actions**, espera el ✅.
 4. Abre tu página publicada y refresca.
 
@@ -154,7 +159,7 @@ Si Git me pide nombre y correo, configúralos con: [tu nombre] y [el correo de t
 
 ### Paso 5. Crea tu base de datos y protégela
 
-1. En el menú de la izquierda: **Compilación → Firestore Database** (en inglés, **Build → Firestore Database**).
+1. En el menú de la izquierda, abre **Bases de datos y almacenamiento** (en inglés, **Databases & Storage**) y elige **Firestore**. Si no lo ves, escribe `Firestore` en el buscador de arriba.
 2. **Crear base de datos.** Si pregunta por la edición, elige **Standard**. Deja la ubicación que aparece.
 3. Elige **Modo de producción** (no el de prueba) y crea.
 4. Ve a la pestaña **Reglas**, borra lo que hay, pega esto y haz clic en **Publicar**:
@@ -182,12 +187,12 @@ service cloud.firestore {
 
 ### Paso 6. Conecta tu página con Firebase
 
-Firebase necesita saber desde qué página le van a escribir.
+Registras tu página en Firebase y, a cambio, te da un bloque de código con la dirección de tu base de datos.
 
-1. Vuelve a la página principal del proyecto (**Descripción general**, arriba a la izquierda).
-2. Haz clic en el ícono **`</>`** (Web) para agregar una app.
+1. Vuelve a la página principal del proyecto (**Descripción general**, arriba a la izquierda) y haz clic en el botón **Agregar app**.
+2. Te pregunta qué tipo de app es. Elige el ícono **`</>`** (Web).
 3. Ponle un apodo, por ejemplo `landing`. **No** marques Firebase Hosting (ya publicas con GitHub Pages). **Registrar app.**
-4. Aparece un bloque de código. Copia solo la parte de `const firebaseConfig = { ... };`. La vas a usar en el paso 7.
+4. Te pregunta cómo agregar Firebase: elige **Usar una etiqueta `<script>`** (no npm). Aparece un bloque de código que empieza con `<script type="module">`. Cópialo **todo** con el botón de copiar. Lo vas a pegar en el paso 7.
 
 > **¿Esa `apiKey` es secreta?** No. Es la dirección de tu base de datos y está bien que sea pública. Lo que protege tus mensajes son las reglas del paso 5.
 
@@ -210,20 +215,33 @@ Revisa que se vea bien en la pestaña de Live Server. Todavía no guarda nada.
 
 ```
 Conecta este formulario con mi base de datos de Firebase (Firestore).
-- Usa el SDK web de Firebase desde el CDN, sin instalar nada.
-- Cada envío se guarda en la colección "mensajes" con los campos nombre, correo, mensaje y fecha (la hora del servidor, con serverTimestamp).
-- Después de enviar, limpia el formulario y muestra "¡Mensaje enviado!".
-Esta es mi configuración:
-[pega aquí tu firebaseConfig]
+
+Cómo hacerlo:
+- Solo HTML, CSS y JavaScript puro (vanilla). Sin React, sin frameworks, sin npm, sin instalar nada.
+- Pon el código en un archivo nuevo, app.js, y conéctalo al final de index.html con <script type="module" src="app.js"></script>.
+- Importa el SDK web de Firebase desde el CDN oficial (https://www.gstatic.com/firebasejs/...).
+- No cambies el diseño ni los textos que ya tiene la página.
+
+Qué debe hacer:
+- Cada envío se guarda en la colección "mensajes" con los campos nombre, correo, mensaje y fecha (la hora del servidor, con serverTimestamp). Exactamente esos nombres, sin tildes ni campos extra.
+- Mientras se guarda, desactiva el botón y muestra "Enviando...".
+- Cuando se guarde, cambia el formulario por: "¡Gracias por escribirme, [nombre]! Te respondo pronto a tu correo [correo]."
+- Pon el nombre y el correo como texto (textContent), no como HTML.
+- Si falla, muestra "No se pudo enviar, intenta de nuevo" y escribe el error en la consola.
+
+Este es el bloque que me dio Firebase (pásalo a app.js, no lo dejes en index.html):
+[pega aquí todo el bloque que copiaste en el paso 6]
 ```
 
 Los nombres de la colección y de los campos tienen que ser **exactamente** esos: las reglas del paso 5 solo aceptan esos.
+
+> **¿Y las reglas?** Siguen igual. El agradecimiento usa lo que la persona acaba de escribir en el formulario, no lo lee de la base de datos. Por eso tu página puede saludarla por su nombre sin que nadie pueda leer los mensajes de los demás.
 
 <a id="paso-8"></a>
 
 ### Paso 8. Pruébalo y publícalo
 
-1. En la pestaña de Live Server, llena el formulario y envía.
+1. En la pestaña de Live Server, llena el formulario y envía. Debe aparecer el agradecimiento con tu nombre y tu correo.
 2. En Firebase, ve a **Firestore Database → Datos**. Aparece la colección `mensajes` con tu mensaje adentro.
 
 > ✅ **Victoria 2.** Tu página tiene memoria: lo que alguien escribe queda guardado.

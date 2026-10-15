@@ -5,7 +5,7 @@ title: "Sesión 2 · Dale memoria a tu landing page"
 fecha: 2026-10-15
 ---
 
-[Inicio](../../) · [Sesión 1](../01/) · **Sesión 2**
+[Inicio](../../) · [Sesión 1](../01/) · **Sesión 2** · [Agenda de hoy](agenda/)
 
 # Sesión 2 · Dale memoria a tu landing page
 

@@ -31,6 +31,7 @@ Al terminar esta guía vas a tener una página web tuya, publicada en internet y
 7. [Taller para la sesión 2](#taller)
 8. [Problemas frecuentes](#problemas)
 9. [Próxima sesión](#proxima)
+10. [Glosario](#glosario)
 
 <a id="antes"></a>
 
@@ -291,6 +292,35 @@ Comparte el link de tu página (`https://TU-USUARIO.github.io/hello-world`) ante
 ## Próxima sesión
 
 **Sesión 2 · Dale memoria a tu landing page.** Vas a agregarle a tu página un formulario de contacto: tus visitantes te dejan un mensaje y queda guardado en una base de datos.
+
+<a id="glosario"></a>
+
+## Glosario
+
+| Término | Qué es |
+|---|---|
+| **Agente** | La IA con la que chateas en Antigravity. Le pides cambios y los hace en tu código. |
+| **Build** | Cuando GitHub arma tu página a partir de tus archivos. |
+| **Caja de cambios** | Nuestra forma de trabajar: cambios pequeños, uno a la vez, revisando cada uno. Lo contrario es el *piloto automático*. |
+| **Código espagueti** | Código enredado que nadie entiende, casi siempre por pedirle todo a la IA de una vez. |
+| **Commit** | La minuta de un cambio: qué cambió y cuándo. Tiene un identificador único. |
+| **CSS** | La ropa de la página: colores, tamaños, posiciones. |
+| **Deploy** | Publicar: tu página pasa de tus archivos a internet. |
+| **Footer** | El pie de página, donde suelen ir los datos de contacto. |
+| **GitHub** | Donde guardas tu código en la nube, con el historial de todos los cambios. Como un Drive con historial. |
+| **GitHub Actions** | La pestaña donde ves a GitHub construir y publicar tu página. ✅ significa que terminó. |
+| **GitHub Pages** | El servicio que convierte tu repositorio en una página web pública. |
+| **Headings** (`h1` a `h6`) | Los títulos de la página, del más importante (`h1`) al menos importante (`h6`). |
+| **Hero** | La parte grande y llamativa de arriba de la página. |
+| **HTML** | El esqueleto de la página: qué hay y en qué orden. |
+| **IDE** | La pantalla de Antigravity donde ves tus archivos, tu código y el agente. |
+| **`index.html`** | El archivo que los navegadores abren primero. Siempre se llama así. |
+| **Main** | La rama principal de tu repositorio: la versión oficial de tu proyecto. |
+| **Mobile first** | Diseñar primero para el celular y después adaptar a pantallas grandes. |
+| **Nav** | El encabezado con los links para moverse por la página. |
+| **Prompt** | Lo que le escribes al agente para pedirle algo. |
+| **README** | El manual de instrucciones de un repositorio. |
+| **Repositorio** | La carpeta de tu proyecto en GitHub. |
 
 ---
 

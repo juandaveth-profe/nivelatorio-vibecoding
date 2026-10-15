@@ -12,6 +12,8 @@ fecha: 2026-10-15
 Hoy tu página deja de mostrar solo contenido fijo: le agregas un formulario de contacto y cada mensaje que te dejen queda guardado en una base de datos. Y de paso, se acabó copiar y pegar código en GitHub.
 
 > ▶ **Video de la clase:** disponible después de la sesión.
+>
+> 📝 **Pad de la clase:** [pad.riseup.net/p/vibe-coding-sesion2-15oct](https://pad.riseup.net/p/vibe-coding-sesion2-15oct). Escribe tu nombre en cada victoria y marca tu estado.
 
 ## Contenido
 
@@ -19,7 +21,7 @@ Hoy tu página deja de mostrar solo contenido fijo: le agregas un formulario de 
 2. [Las dos victorias de hoy](#victorias)
 3. [Parte 1 · Tu carpeta conectada a GitHub](#parte-1)
    - [Paso 1. Clona tu repositorio en Antigravity](#paso-1)
-   - [Paso 2. Haz un cambio pequeño](#paso-2)
+   - [Paso 2. Mírala en vivo y haz un cambio pequeño](#paso-2)
    - [Paso 3. Pídele al agente que lo suba](#paso-3)
 4. [Parte 2 · Tu página con memoria](#parte-2)
    - [Paso 4. Crea tu proyecto en Firebase](#paso-4)
@@ -30,6 +32,7 @@ Hoy tu página deja de mostrar solo contenido fijo: le agregas un formulario de 
 5. [Parte 3 · ¿Qué es una base de datos?](#parte-3)
 6. [Taller para la sesión 3](#taller)
 7. [Problemas frecuentes](#problemas)
+8. [Glosario](#glosario)
 
 <a id="antes"></a>
 
@@ -48,6 +51,11 @@ Hoy tu página deja de mostrar solo contenido fijo: le agregas un formulario de 
 2. **Victoria 2:** alguien escribe en tu formulario y el mensaje aparece guardado en tu base de datos.
 
 Vamos de a una. Lo que no se explica hoy, funciona igual: **confía en la magia**.
+
+En el [pad de la clase](https://pad.riseup.net/p/vibe-coding-sesion2-15oct) escribe tu nombre debajo de cada victoria y marca tu estado:
+
+- ✅ **Hecho:** ya lo ves en tu pantalla.
+- 🙋 **Duda:** te trabaste. Escribe en qué paso, así te ayudamos.
 
 ---
 
@@ -72,11 +80,30 @@ En la sesión 1 copiabas el código y lo pegabas en GitHub. Hoy conectas tu carp
 
 <a id="paso-2"></a>
 
-### Paso 2. Haz un cambio pequeño
+### Paso 2. Mírala en vivo y haz un cambio pequeño
 
-1. Abre `index.html` y busca el título de tu hero.
+Antes de cambiar nada, pon tu página a correr en tu computador con **Live Server**.
+
+*Live Server* es una extensión que convierte tu carpeta en un pequeño servidor web, como el de GitHub Pages pero en tu computador. Así tu página carga completa, como en internet: el `index.html` **y también** tus estilos (`.css`), tu código (`.js`) y tus imágenes.
+
+**a. Instálala (solo la primera vez).**
+
+1. En Antigravity, abre la vista de **Extensions** (el ícono de cuadritos, en la barra de la izquierda).
+2. Busca `Live Server` y elige la de **Ritwick Dey**. Haz clic en **Install**.
+
+**b. Enciéndela.**
+
+1. Abre `index.html`.
+2. Haz clic en **Go Live**, abajo a la derecha, en la barra azul.
+3. Se abre tu navegador en una dirección como `http://127.0.0.1:5500`. Esa es tu página corriendo en vivo, en tu computador.
+
+> **Deja esa pestaña abierta toda la clase.** Cada vez que guardes, se refresca sola.
+
+**c. Haz el cambio.**
+
+1. En `index.html`, busca el título de tu hero.
 2. Cámbiale una palabra. Algo pequeño: la idea es probar el camino, no rediseñar.
-3. Guarda (`Cmd + S` en Mac, `Ctrl + S` en Windows).
+3. Guarda (`Cmd + S` en Mac, `Ctrl + S` en Windows) y mira la pestaña de Live Server: el cambio aparece solo, con todos tus estilos.
 
 Fíjate en la vista de **Source Control**: aparece tu archivo con una **M**, de *modificado*. Git ya sabe que algo cambió.
 
@@ -97,6 +124,8 @@ Si Git me pide nombre y correo, configúralos con: [tu nombre] y [el correo de t
 4. Abre tu página publicada y refresca.
 
 > ✅ **Victoria 1.** Cambiaste algo en tu computador y está en internet. Ese es el ciclo de hoy en adelante: **cambias → commit → push → publicado**.
+>
+> 📝 Marca tu estado en el [pad](https://pad.riseup.net/p/vibe-coding-sesion2-15oct).
 
 | Palabra | Es como... |
 |---|---|
@@ -175,7 +204,7 @@ Antes del footer, agrega una sección de contacto con un formulario:
 nombre, correo y mensaje, y un botón "Enviar". Usa el mismo estilo del resto de la página.
 ```
 
-Revisa que se vea bien en tu navegador. Todavía no guarda nada.
+Revisa que se vea bien en la pestaña de Live Server. Todavía no guarda nada.
 
 **b. La conexión.** Ahora pídele:
 
@@ -194,10 +223,12 @@ Los nombres de la colección y de los campos tienen que ser **exactamente** esos
 
 ### Paso 8. Pruébalo y publícalo
 
-1. Abre `index.html` en tu navegador, llena el formulario y envía.
+1. En la pestaña de Live Server, llena el formulario y envía.
 2. En Firebase, ve a **Firestore Database → Datos**. Aparece la colección `mensajes` con tu mensaje adentro.
 
 > ✅ **Victoria 2.** Tu página tiene memoria: lo que alguien escribe queda guardado.
+>
+> 📝 Marca tu estado en el [pad](https://pad.riseup.net/p/vibe-coding-sesion2-15oct).
 
 3. Súbelo, como en el paso 3:
 
@@ -253,12 +284,43 @@ Antes de la sesión 3, comparte:
 
 | Lo que pasa | Qué hacer |
 |---|---|
+| No aparece **Go Live** | Revisa que Live Server esté instalado y que tengas abierto un archivo `.html`. Si sigue sin salir, reinicia Antigravity. |
+| La dirección empieza por `file://` | Abriste el archivo con doble clic. Ciérrala y usa **Go Live**: la dirección debe empezar por `http://127.0.0.1`. |
 | No aparece **Clone Repository** | Revisa que Git esté instalado: en una terminal, `git --version`. Si no responde, instálalo y reinicia Antigravity. |
 | El commit falla con *"Please tell me who you are"* | Git no sabe tu nombre. Pídele al agente que lo configure con tu nombre y correo de GitHub. |
 | El push pide usuario y contraseña en la terminal | Usa los botones de **Source Control**: escribe el mensaje, **Commit** y después **Sync Changes**. Autoriza GitHub en el navegador. |
 | *"Missing or insufficient permissions"* al enviar | Los nombres no coinciden con las reglas. Revisa que la colección sea `mensajes` y los campos `nombre`, `correo`, `mensaje` y `fecha`, sin tildes ni mayúsculas. |
 | No pasa nada al enviar | Clic derecho → **Inspeccionar** → **Console**. Copia el error en rojo y pégaselo al agente. |
 | Funciona en mi computador pero no en la página publicada | Faltó el push, o Actions no ha terminado. Revisa que el commit esté en GitHub. |
+
+<a id="glosario"></a>
+
+## Glosario
+
+Los términos de la sesión 1 están en su [glosario](../01/#glosario).
+
+| Término | Qué es |
+|---|---|
+| **Base de datos** | Un lugar ordenado donde tu página guarda información para consultarla después. |
+| **Campo** | Un dato dentro de un documento. Como una columna: `nombre`, `correo`, `mensaje`, `fecha`. |
+| **CDN** | Un servidor que entrega código listo para usar, sin instalar nada. De ahí sale Firebase en tu página. |
+| **Clonar** | Bajar una copia de tu repositorio a tu computador, que queda conectada con GitHub. |
+| **Colección** | Un grupo de documentos del mismo tipo. Como una hoja de cálculo. La tuya se llama `mensajes`. |
+| **Consola de Firebase** | La página web donde administras tu proyecto y ves los mensajes guardados. |
+| **Consola del navegador** | Clic derecho → Inspeccionar → Console. Ahí aparecen los errores de tu página, en rojo. |
+| **Documento** | Un registro dentro de una colección. Como una fila: un mensaje que alguien te dejó. |
+| **Firebase** | Un servicio de Google que le da a tu página una base de datos, usuarios y archivos. |
+| **`firebaseConfig`** | La dirección de tu proyecto de Firebase. Puede ser pública: lo que protege tus datos son las reglas. |
+| **Firestore** | La base de datos de Firebase que usamos hoy. |
+| **Formulario** | Los campos donde alguien escribe y el botón para enviar. |
+| **Git** | El programa que lleva el historial de tu proyecto en tu computador y lo sincroniza con GitHub. |
+| **Live Server** | Extensión que pone tu página a correr en tu computador, con todos sus archivos, y la refresca cada vez que guardas. |
+| **Push** | Mandar tus commits de tu computador a GitHub. |
+| **Reglas de seguridad** | Quién puede hacer qué con tu base de datos. En la tuya: cualquiera puede dejar un mensaje, nadie puede leerlo desde la página. |
+| **SDK** | Una caja de herramientas de código para hablar con un servicio, en este caso con Firebase. |
+| **`serverTimestamp`** | La hora del servidor de Firebase. Así la fecha de cada mensaje no depende del reloj de quien lo envía. |
+| **Source Control** | La vista de Antigravity (el ícono de ramitas) que muestra qué archivos cambiaron. **M** = modificado. |
+| **Terminal** | La ventana donde se escriben comandos, como `git --version`. |
 
 ---
 

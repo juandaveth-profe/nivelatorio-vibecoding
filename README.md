@@ -5,8 +5,8 @@ Un curso para crear tus propios productos digitales con inteligencia artificial,
 | Sesión | Tema | Video | Guía y taller |
 |---|---|---|---|
 | 1 · 8 oct | Tu primera página web con IA | [▶ YouTube](https://youtu.be/qUCmcmCVIgk) | [Guía paso a paso](sesiones/01/) |
-| 2 · 15 oct | Dale memoria a tu landing page | [▶ Parte 1](https://youtu.be/y9ELxSq3WH0) · Parte 2 próximamente | [Guía paso a paso](sesiones/02/) |
-| 3 · 22 oct | Exploraciones con IA | Próximamente | Próximamente |
+| 2 · 15 oct | GitHub automatizado con IA | [▶ YouTube](https://youtu.be/y9ELxSq3WH0) | [Guía paso a paso](sesiones/02/) |
+| 3 · 22 oct | Tu base de datos, ahora con IA | Próximamente | [Guía paso a paso](sesiones/03/) |
 
 ▶ **Todos los videos en una lista de YouTube:** [Vibecoding Nivelatorio](https://www.youtube.com/playlist?list=PLfSjHhGSasPg)
 

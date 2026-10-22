@@ -12,6 +12,8 @@ fecha: 2026-10-22
 Hoy tu página aprende a escuchar: le agregas un formulario de contacto y cada mensaje que te dejen queda guardado en una base de datos. Después conectas el agente de Antigravity a esa base de datos, para que te responda en español qué te escribieron.
 
 > ▶ **Video:** próximamente.
+>
+> 📝 **Pad de la clase:** [pad.riseup.net/p/vibe-coding-sesion3-22oct](https://pad.riseup.net/p/vibe-coding-sesion3-22oct). Escribe tu nombre en cada check-in y marca tu estado.
 
 ## Contenido
 
@@ -49,6 +51,11 @@ Hoy tu página aprende a escuchar: le agregas un formulario de contacto y cada m
 2. **Victoria 2:** le preguntas al agente "¿qué me escribieron hoy?" y te responde con tus mensajes.
 
 Vamos de a una. Lo que no se explica hoy, funciona igual: **confía en la magia**.
+
+En el [pad de la clase](https://pad.riseup.net/p/vibe-coding-sesion3-22oct) escribe tu nombre debajo de cada check-in y marca tu estado:
+
+- ✅ **Hecho:** ya lo ves en tu pantalla.
+- 🙋 **Duda:** te trabaste. Escribe en qué paso, así te ayudamos.
 
 ---
 
@@ -135,6 +142,8 @@ Cada envío se guarda en la colección "mensajes" con los campos nombre, correo,
    - Haz clic en el documento que aparece (tiene un nombre raro, como `aB3xK9...`). A la derecha ves tus campos: `nombre`, `correo`, `mensaje` y `fecha`.
 
 > ✅ **Victoria 1.** Tu página tiene memoria: lo que alguien escribe queda guardado en tu base de datos.
+>
+> 📝 Marca tu estado en el [pad](https://pad.riseup.net/p/vibe-coding-sesion3-22oct).
 
 Los nombres de la colección y de los campos tienen que ser **exactamente** esos: las reglas del paso 2 solo aceptan esos. Si no aparece nada, mira [Problemas frecuentes](#problemas).
 
@@ -261,6 +270,8 @@ Prueba otras preguntas:
 ```
 
 > ✅ **Victoria 2.** Ya no abres tus mensajes uno por uno: le preguntas al agente y te responde con lo que guardó tu página.
+>
+> 📝 Marca tu estado en el [pad](https://pad.riseup.net/p/vibe-coding-sesion3-22oct).
 
 ---
 

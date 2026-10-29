@@ -40,9 +40,10 @@ nuestra. Todo con un mismo método de cuatro pasos: **explorar → planear → c
    - [Paso 6. Una carpeta nueva para tu app](#paso-6)
    - [Paso 7. Pídele un plan](#paso-7)
 8. [Parte 3 · Codificar](#parte-3)
-   - [Paso 8. Aprueba el plan y pruébala](#paso-8)
+   - [Paso 8. Aprueba el plan y míralo construir](#paso-8)
+   - [Paso 9. Que Claudio la pruebe en Chrome](#paso-9)
 9. [Parte 4 · Commit](#parte-4)
-   - [Paso 9. Revisión y commit](#paso-9)
+   - [Paso 10. Revisión y commit](#paso-10)
 10. [Taller](#taller)
 11. [Problemas frecuentes](#problemas)
 12. [Glosario](#glosario)
@@ -53,6 +54,7 @@ nuestra. Todo con un mismo método de cuatro pasos: **explorar → planear → c
 
 - [ ] **Una cuenta de Claude Pro** (o Max). Con el plan gratis, Claude Code no funciona. ¿No tienes Pro? Mira la [nota de la Claude Console](#sin-pro).
 - [ ] **Git.** En Mac ya viene (si al usarlo te pide instalar las herramientas de desarrollo, acepta). En Windows, instala [Git for Windows](https://git-scm.com/downloads/win) con las opciones que trae.
+- [ ] **Google Chrome** (o Edge, Brave, Arc) con la extensión [Claude in Chrome](https://chromewebstore.google.com/detail/claude/fcoeoabgfenejglbffodgkkbkcdhcgfn), iniciada con la misma cuenta de Claude. La usas en el [paso 9](#paso-9).
 - [ ] Si puedes, instala Claude Code antes de la clase con el [paso 1](#paso-1).
 
 <a id="victorias"></a>
@@ -61,7 +63,7 @@ nuestra. Todo con un mismo método de cuatro pasos: **explorar → planear → c
 
 1. **Victoria 1:** Spliit en tu computador y Claude Code abierto en modo plan.
 2. **Victoria 2:** Claude te explica cómo Spliit calcula quién le debe a quién.
-3. **Victoria 3:** registras un gasto en tu app y te dice quién debe cuánto.
+3. **Victoria 3:** Claudio prueba tu app en Chrome y la app dice quién debe cuánto.
 4. **Victoria 4:** tu primer commit, hecho con Claude, aparece en `git log`.
 
 Vamos de a una. Lo que no se explica hoy, funciona igual: **confía en la magia**.
@@ -241,8 +243,11 @@ Sal de la carpeta `spliit` y crea la de tu app al lado:
 cd ..
 mkdir mi-splitwise && cd mi-splitwise
 git init
-claude
+claude --chrome
 ```
+
+El `--chrome` conecta a Claudio con tu navegador; lo usas en el [paso 9](#paso-9). La primera vez
+te muestra un aviso sobre la extensión: presiona Enter.
 
 <a id="paso-7"></a>
 
@@ -278,30 +283,43 @@ familia. Así quedó su prompt:
 
 <a id="paso-8"></a>
 
-### Paso 8. Aprueba el plan y pruébala
+### Paso 8. Aprueba el plan y míralo construir
 
 Cuando el plan te guste, apruébalo escogiendo **auto-aceptar ediciones**: Claude construye sin
 pedirte permiso archivo por archivo. Si ves que se desvía, presiona **Esc** y corrígelo.
 
-Cuando termine, abre tu app en el navegador:
+<a id="paso-9"></a>
+
+### Paso 9. Que Claudio la pruebe en Chrome
+
+Aquí se ve el ciclo del agente completo: Claudio no solo construye, también **verifica**. Con la
+extensión de Chrome abre tu app, la usa como lo haría una persona y revisa si cumple tu criterio de
+éxito. Pega este prompt (cambia el criterio por el tuyo):
+
+> Abre mi app en Chrome y pruébala como lo haría una persona: agrega a Ana, Beto y Caro, registra que Ana pagó 90.000 de una cena entre los tres y revisa si la app dice que Beto y Caro le deben 30.000 cada uno a Ana. Si algo no cumple, corrígelo y vuelve a probar hasta que funcione. Al final dime qué probaste y qué corregiste.
+
+Vas a ver a Claudio trabajar en una pestaña de Chrome: hace clic, escribe y lee los resultados.
+Cuando te pida permiso para usar el navegador ("Claude in Chrome wants to…"), apruébalo.
+
+Después pruébala **tú también**, con tus propios datos. **Claude se equivoca:** puede entenderte
+mal, meter errores o hacer cosas que no pediste, y también puede probar mal. Si algo falla, díselo
+con un ejemplo concreto y pide los ajustes de a uno.
+
+¿No funciona la extensión? Abre la app tú y pruébala a mano:
 
 - **Mac:** `open index.html`
 - **Windows:** `start index.html`
 - **Linux:** `xdg-open index.html`
 
-Prueba tu criterio de éxito (o el de Ana, Beto y Caro). **Claude se equivoca:** puede entenderte mal, meter errores o
-hacer cosas que no pediste. Tú pruebas. Si algo falla, díselo con un ejemplo concreto y pide los
-ajustes de a uno.
-
-✅ **Victoria 3** cuando registres un gasto y te diga quién debe cuánto.
+✅ **Victoria 3** cuando Claudio (y tú) registren un gasto y la app diga quién debe cuánto.
 
 <a id="parte-4"></a>
 
 ## Parte 4 · Commit
 
-<a id="paso-9"></a>
+<a id="paso-10"></a>
 
-### Paso 9. Revisión y commit
+### Paso 10. Revisión y commit
 
 Un **commit** es una foto de tu proyecto a la que siempre puedes volver. Antes de tomarla:
 
@@ -338,6 +356,9 @@ git log
 | `git: command not found` o "git no se reconoce" | Falta Git. En Windows instala [Git for Windows](https://git-scm.com/downloads/win); en Mac acepta instalar las herramientas de desarrollo. Cierra y abre la terminal. |
 | Claude Code dice que tu plan no incluye Claude Code | Estás con el plan gratis. Necesitas Pro, Max o una [cuenta de la Console](#sin-pro). |
 | No ves el modo plan | Presiona Shift+Tab hasta que aparezca abajo, o cierra con `/exit` y abre otra vez con `claude --permission-mode plan`. |
+| Claudio dice "Browser extension is not connected" o "No browsers are connected" | Abre Chrome y revisa que la extensión esté iniciada con **la misma cuenta** de Claude. En Claude Code escribe `/chrome` y escoge "Reconnect extension". Si es la primera vez, cierra y abre Chrome. |
+| Claudio no puede abrir `index.html` en Chrome | En Chrome ve a `chrome://extensions`, abre los **Detalles** de la extensión de Claude y activa **Permitir acceso a las URL de archivos**. |
+| Entraste con la Claude Console (API) y no hay Chrome | La extensión solo funciona con cuentas Pro, Max, Team o Enterprise. Prueba la app a mano (paso 9). |
 | La app no hace bien las cuentas | Dale a Claude el caso exacto que falla ("con estos gastos dice X y debería decir Y"). |
 
 <a id="glosario"></a>
@@ -352,6 +373,7 @@ git log
 - **Ventana de contexto:** la "mesa de trabajo" de Claude: todo lo que puede tener presente a la vez.
 - **Clonar:** bajar a tu computador una copia completa de un proyecto de GitHub.
 - **Código abierto:** software cuyo código es público y se puede estudiar y reutilizar según su licencia.
+- **Claude in Chrome:** la extensión que deja a Claudio usar tu navegador para probar lo que construye.
 - **Commit:** una foto guardada de tu proyecto, con un mensaje que dice qué cambió.
 
 ---

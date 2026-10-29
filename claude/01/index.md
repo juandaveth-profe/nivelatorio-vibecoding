@@ -33,7 +33,7 @@ nuestra. Todo con un mismo método de cuatro pasos: **explorar → planear → c
    - [Paso 2. Primer arranque](#paso-2)
    - [Paso 3. Los modos de permiso](#paso-3)
 5. [Parte 1 · Explorar: desarma Spliit](#parte-1)
-   - [Paso 4. Conecta REA](#paso-4)
+   - [Paso 4. Clona Spliit y ábrelo en modo plan](#paso-4)
    - [Paso 5. Pregúntale a Spliit cómo funciona](#paso-5)
 6. [La mesa de trabajo (ventana de contexto)](#mesa)
 7. [Parte 2 · Planear](#parte-2)
@@ -52,7 +52,6 @@ nuestra. Todo con un mismo método de cuatro pasos: **explorar → planear → c
 ## Antes de empezar
 
 - [ ] **Una cuenta de Claude Pro** (o Max). Con el plan gratis, Claude Code no funciona. ¿No tienes Pro? Mira la [nota de la Claude Console](#sin-pro).
-- [ ] **Node.js**, la versión LTS de [nodejs.org](https://nodejs.org). Instálala aunque ya tengas Node: REA pide una versión reciente.
 - [ ] **Git.** En Mac ya viene (si al usarlo te pide instalar las herramientas de desarrollo, acepta). En Windows, instala [Git for Windows](https://git-scm.com/downloads/win) con las opciones que trae.
 - [ ] Si puedes, instala Claude Code antes de la clase con el [paso 1](#paso-1).
 
@@ -60,7 +59,7 @@ nuestra. Todo con un mismo método de cuatro pasos: **explorar → planear → c
 
 ## Las cuatro victorias de hoy
 
-1. **Victoria 1:** Claude Code y REA conectados.
+1. **Victoria 1:** Spliit en tu computador y Claude Code abierto en modo plan.
 2. **Victoria 2:** Claude te explica cómo Spliit calcula quién le debe a quién.
 3. **Victoria 3:** registras un gasto en tu app y te dice quién debe cuánto.
 4. **Victoria 4:** tu primer commit, hecho con Claude, aparece en `git log`.
@@ -162,49 +161,48 @@ Entre menos te pregunta, más fácil se le pasa un error sin que lo veas.
 ## Parte 1 · Explorar: desarma Spliit
 
 [Splitwise](https://www.splitwise.com) es una app para dividir gastos entre amigos, y cobra por
-varias de sus funciones. **Spliit** es una alternativa de **código abierto** (licencia MIT): su
+varias de sus funciones. **[Spliit](https://spliit.app/)** es una alternativa de **código abierto** (licencia MIT): su
 código es público y se puede leer, estudiar y usar para aprender. Por eso desarmamos Spliit y no
 Splitwise: **antes de desarmar una app, mira su licencia.**
 
+Antes de desarmarla, úsala un minuto: entra a [spliit.app](https://spliit.app/), crea un grupo de
+prueba y registra un gasto. Así sabes qué buscar cuando la abras por dentro.
+
 <a id="paso-4"></a>
 
-### Paso 4. Conecta REA
+### Paso 4. Clona Spliit y ábrelo en modo plan
 
-[REA](https://rea.tools) es una caja de herramientas para desarmar software que se le conecta a
-Claude Code. En la terminal (fuera de Claude Code):
+**Clonar** es bajar a tu computador una copia completa del código de un proyecto de GitHub. En la
+terminal (fuera de Claude Code):
 
 ```
-mkdir rea-work && cd rea-work
+mkdir claudio && cd claudio
 git clone https://github.com/spliit-app/spliit.git
-npx rea-agents@latest setup --client claude_code
+cd spliit
 ```
 
-El `setup` te muestra lo que va a cambiar y te pide aprobarlo. Después **cierra Claude Code si lo
-tenías abierto** y verifica:
-
-```
-npx -y rea-agents@latest doctor --client claude_code
-```
-
-✅ **Victoria 1** cuando diga `healthy: true`.
-
-<a id="paso-5"></a>
-
-### Paso 5. Pregúntale a Spliit cómo funciona
-
-Abre Claude Code **en modo plan**, para que solo pueda mirar:
+Ahora abre Claude Code **en modo plan**, para que solo pueda mirar y no cambie nada:
 
 ```
 claude --permission-mode plan
 ```
 
-Pega este prompt:
+✅ **Victoria 1** cuando veas el modo plan activo abajo en la terminal, dentro de la carpeta `spliit`.
 
-> Usa REA para analizar la app que está en la carpeta spliit. Explícame como si no supiera programar: ¿qué pantallas tiene y qué guarda?
+<a id="paso-5"></a>
+
+### Paso 5. Pregúntale a Spliit cómo funciona
+
+No tienes que leer el código: Claudio lo lee por ti. Pega este prompt:
+
+> Explícame como si no supiera programar: ¿qué pantallas tiene esta app y qué guarda?
 
 Cuando responda, pega este:
 
-> Con REA, encuentra cómo Spliit calcula quién le debe a quién. ¿Qué formas de dividir un gasto tiene? Muéstrame los archivos y las líneas.
+> ¿Cómo calcula esta app quién le debe a quién? ¿Qué formas de dividir un gasto tiene? Muéstrame los archivos y las líneas.
+
+Mientras trabaja, fíjate en lo que hace: **no lee todo el proyecto**. Busca, abre solo los archivos
+que necesita y te dice de dónde sacó cada respuesta.
 
 ✅ **Victoria 2** cuando Claude te explique quién le debe a quién. ¿Cuántas formas de dividir encontró?
 
@@ -237,7 +235,7 @@ Sal de Claude Code con `/exit`.
 
 ### Paso 6. Una carpeta nueva para tu app
 
-Sal de la carpeta `rea-work` y crea la de tu app:
+Sal de la carpeta `spliit` y crea la de tu app al lado:
 
 ```
 cd ..
@@ -322,9 +320,9 @@ git log
 | `command not found: claude` o "no se reconoce" | Cierra la terminal y abre una nueva. Si sigue, repite el [paso 1](#paso-1). |
 | Windows: `'irm' is not recognized` | Estás en CMD, no en PowerShell. Usa el comando de CMD del [paso 1](#paso-1). |
 | Windows: `The token '&&' is not a valid statement separator` | Estás en PowerShell. Usa el comando de PowerShell. |
-| `EBADENGINE` al usar REA | Tu Node es viejo. Instala la versión LTS de [nodejs.org](https://nodejs.org). |
+| `git: command not found` o "git no se reconoce" | Falta Git. En Windows instala [Git for Windows](https://git-scm.com/downloads/win); en Mac acepta instalar las herramientas de desarrollo. Cierra y abre la terminal. |
 | Claude Code dice que tu plan no incluye Claude Code | Estás con el plan gratis. Necesitas Pro, Max o una [cuenta de la Console](#sin-pro). |
-| REA no aparece en Claude Code | Cierra Claude Code y vuelve a abrirlo después del `setup`. Corre el `doctor` del [paso 4](#paso-4). |
+| No ves el modo plan | Presiona Shift+Tab hasta que aparezca abajo, o cierra con `/exit` y abre otra vez con `claude --permission-mode plan`. |
 | La app no hace bien las cuentas | Dale a Claude el caso exacto que falla ("con estos gastos dice X y debería decir Y"). |
 
 <a id="glosario"></a>
@@ -337,7 +335,7 @@ git log
 - **Modo plan:** el modo en que Claude solo mira y propone; no cambia nada.
 - **Auto-aceptar:** el modo en que Claude edita archivos sin pedirte permiso cada vez.
 - **Ventana de contexto:** la "mesa de trabajo" de Claude: todo lo que puede tener presente a la vez.
-- **REA:** herramientas para desarmar software, conectadas a Claude Code.
+- **Clonar:** bajar a tu computador una copia completa de un proyecto de GitHub.
 - **Código abierto:** software cuyo código es público y se puede estudiar y reutilizar según su licencia.
 - **Commit:** una foto guardada de tu proyecto, con un mensaje que dice qué cambió.
 

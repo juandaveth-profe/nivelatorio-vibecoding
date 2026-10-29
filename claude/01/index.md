@@ -42,6 +42,7 @@ nuestra. Todo con un mismo método de cuatro pasos: **explorar → planear → c
 8. [Parte 3 · Codificar](#parte-3)
    - [Paso 8. Aprueba el plan y míralo construir](#paso-8)
    - [Paso 9. Que Claudio la pruebe en Chrome](#paso-9)
+   - [La mesa después de construir (Claudio Tókenez)](#mesa-2)
 9. [Parte 4 · Commit](#parte-4)
    - [Paso 10. Revisión y commit](#paso-10)
 10. [Taller](#taller)
@@ -312,6 +313,45 @@ con un ejemplo concreto y pide los ajustes de a uno.
 - **Linux:** `xdg-open index.html`
 
 ✅ **Victoria 3** cuando Claudio (y tú) registren un gasto y la app diga quién debe cuánto.
+
+<a id="mesa-2"></a>
+
+### La mesa después de construir (Claudio Tókenez)
+
+Ya construiste una app entera. Antes del commit, escribe otra vez:
+
+```
+/context
+```
+
+Así se veía la mesa del profe en este mismo punto:
+
+![La ventana de contexto del profe después de construir la app: 73.7k de 1M tokens (7 %)](img/01-context-profe.jpg)
+
+**Cómo leerla:**
+
+| Lo que dice | Qué significa |
+|---|---|
+| **73.7k / 1M tokens (7 %)** | La mesa es enorme: después de construir una app completa, apenas va un 7 %. |
+| **System prompt** y **System tools** | Lo que Claudio trae de fábrica: sus instrucciones y sus herramientas básicas (leer, editar, correr comandos). |
+| **MCP tools** (227 herramientas) | Lo que el profe le ha conectado (correo, Notion, Chrome…). Ocupan espacio aunque no las use hoy. |
+| **Skills** (52) | Habilidades guardadas. Ocupan poco: de cada una, Claudio solo carga el nombre y la descripción hasta que la necesita. Lo vemos en la sesión 3. |
+| **Messages** | La conversación y todo lo que Claudio leyó y respondió para construir la app. **Este es el trabajo de verdad.** |
+| **Autocompact buffer** | Espacio que Claudio deja libre para resumir cuando la mesa se llene. |
+
+Fíjate también en el **recap** de abajo: Claudio le puso nombre a la app ("Cuentas Claras") y resumió
+en qué vamos. Puede hacerlo porque todo está sobre la mesa.
+
+**Para conversar:**
+
+1. **Compara tu mesa con la del profe.** La tuya seguramente tiene menos cosas antes de empezar, porque no tienes herramientas conectadas ni skills. Es como la maleta de un viaje: el profe empacó 227 herramientas "por si acaso" y viajan con él aunque no las saque.
+2. **¿Cuánto es un millón de tokens?** Un token es más o menos un pedazo de palabra. En esa mesa cabe *Cien años de soledad* unas cuatro veces. Pero ojo: cada vez que le escribes, Claudio **vuelve a mirar toda la mesa**.
+3. **Claudio Tókenez vive de tokens.** Tu plan tiene un límite de uso que se renueva cada cierto tiempo, y entre más llena la mesa, más le cuesta cada respuesta. Por eso: una tarea, una sesión (`/clear` antes de la siguiente idea), preguntas concretas, y conectar solo lo que usas.
+4. **El modelo también cuenta.** Arriba dice qué modelo estás usando. Los más potentes gastan el límite más rápido; en la sesión 2 aprendemos a escoger con `/model`.
+
+> El tamaño de tu mesa puede ser distinto al del profe: depende del modelo y del plan.
+
+En el [pad](https://pad.riseup.net/p/vibe-coding-sesiones-con-claudio-29-oct) escribe: tu nombre · el % que te salió · qué categoría ocupa más.
 
 <a id="parte-4"></a>
 

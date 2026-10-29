@@ -15,7 +15,7 @@ Hoy aprendes a trabajar con **Claude Code**, el agente de Claude que vive en tu 
 desarmamos una app real de dividir gastos para entender cómo está hecha, y después construimos la
 nuestra. Todo con un mismo método de cuatro pasos: **explorar → planear → codificar → commit**.
 
-> 🤖 **¿Por qué "Claudio"?** Así le decimos de cariño a Claude en esta serie de tres sesiones.
+> 🤖 **¿Por qué "Claudio"?** Así le decimos de cariño a Claude en esta serie de tres sesiones. Su nombre completo es **Claudio Tókenez**, porque vive de los tokens (y aquí aprendemos a cuidárselos).
 > Cuando leas *Claudio*, hablamos de Claude. Ojo: en la terminal, en los comandos y en la app se
 > sigue escribiendo `claude`.
 

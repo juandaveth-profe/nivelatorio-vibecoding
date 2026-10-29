@@ -195,11 +195,11 @@ claude --permission-mode plan
 
 No tienes que leer el código: Claudio lo lee por ti. Pega este prompt:
 
-> Explícame como si no supiera programar: ¿qué pantallas tiene esta app y qué guarda?
+> Explícame como si no supiera programar: ¿qué pantallas tiene esta app y qué guarda? Si das ejemplos con dinero, usa pesos colombianos (COP) con montos en miles, como 30.000 o 90.000, aunque el código y la documentación usen euros.
 
 Cuando responda, pega este:
 
-> ¿Cómo calcula esta app quién le debe a quién? ¿Qué formas de dividir un gasto tiene? Muéstrame los archivos y las líneas.
+> ¿Cómo calcula esta app quién le debe a quién? ¿Qué formas de dividir un gasto tiene? Explica cada forma con un ejemplo de tres amigos y montos en pesos colombianos (miles de pesos, como 120.000 de un mercado). Muéstrame los archivos y las líneas.
 
 Mientras trabaja, fíjate en lo que hace: **no lee todo el proyecto**. Busca, abre solo los archivos
 que necesita y te dice de dónde sacó cada respuesta.

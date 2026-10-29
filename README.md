@@ -8,6 +8,14 @@ Un curso para crear tus propios productos digitales con inteligencia artificial,
 | 2 · 15 oct | GitHub automatizado con IA | [▶ YouTube](https://youtu.be/y9ELxSq3WH0) | [Guía paso a paso](sesiones/02/) |
 | 3 · 22 oct | Tu base de datos, ahora con IA | Próximamente | [Guía paso a paso](sesiones/03/) |
 
+## Sesiones con Claudio
+
+Tres sesiones para quienes tienen Claude Pro y quieren ir más allá del chat: aprendemos **Claude Code** construyendo un proyecto de principio a fin. *Claudio* es como le decimos de cariño a Claude.
+
+| Sesión | Tema | Video | Guía y taller |
+|---|---|---|---|
+| 1 · 29 oct | Desarma una app. Construye la tuya. | Próximamente | [Guía paso a paso](claude/01/) |
+
 ▶ **Todos los videos en una lista de YouTube:** [Vibecoding Nivelatorio](https://www.youtube.com/playlist?list=PLfSjHhGSasPg)
 
 ## Cómo usar las guías

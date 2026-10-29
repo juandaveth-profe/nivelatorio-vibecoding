@@ -257,6 +257,21 @@ y una invitación a que te pregunte. Responde sus preguntas y **lee el plan**: e
 para corregir, porque todavía no existe el código. Si algo no te convence, pídele que lo cambie
 antes de aprobar.
 
+#### Hazla tuya
+
+Ana, Beto y Caro son el ejemplo de base, como en la documentación de Spliit. Pero tu app será más
+útil si resuelve algo de tu vida. Piensa en para quién la harías y cambia en el prompt **quiénes
+son, qué gastos tienen y tu criterio de éxito**. Algunas ideas:
+
+- **Las cuentas con tu pareja:** arriendo, mercado y servicios del mes. *Criterio:* si tú pagas el mercado de 300.000 y tu pareja paga los servicios de 200.000, la app dice que tu pareja te debe 50.000.
+- **Un viaje con tu grupo de amigos:** alojamiento, transporte y comidas, cada uno pagado por alguien distinto. *Criterio:* si son cinco y uno paga la finca de 1.500.000, cada uno de los otros cuatro le debe 300.000.
+- **Una empresa que alquila un espacio compartido:** los socios pagan en proporción a su participación. Aquí no se divide en partes iguales, sino **por porcentaje** (como uno de los modos de Spliit): cámbialo en el prompt. *Criterio:* si el arriendo es de 2.000.000 y los socios tienen 50 %, 30 % y 20 %, la app dice que les toca 1.000.000, 600.000 y 400.000.
+
+**El ejemplo del profe:** Juan David va a construir la app para el viaje de fin de año con su
+familia. Así quedó su prompt:
+
+> Quiero una app para llevar las cuentas del viaje de fin de año de mi familia, en un solo archivo index.html, inspirada en lo que aprendimos de Spliit. Somos cuatro: Papá, Mamá, Ricardo y Juan David. Debe permitir registrar un gasto (quién pagó, cuánto, entre quiénes, en partes iguales), ver la lista de gastos del viaje y mostrar quién le debe a quién con la menor cantidad de pagos. Usa pesos colombianos. Guarda los datos en el navegador y que se vea bien en el celular. No uses el nombre ni el logo de Splitwise ni de Spliit. Sabremos que funciona si: Papá paga el alojamiento de 1.200.000 entre los cuatro, y la app dice que Mamá, Ricardo y Juan David le deben 300.000 cada uno a Papá. Antes de escribir código, hazme las preguntas que necesites.
+
 <a id="parte-3"></a>
 
 ## Parte 3 · Codificar
@@ -274,7 +289,7 @@ Cuando termine, abre tu app en el navegador:
 - **Windows:** `start index.html`
 - **Linux:** `xdg-open index.html`
 
-Prueba el caso de Ana, Beto y Caro. **Claude se equivoca:** puede entenderte mal, meter errores o
+Prueba tu criterio de éxito (o el de Ana, Beto y Caro). **Claude se equivoca:** puede entenderte mal, meter errores o
 hacer cosas que no pediste. Tú pruebas. Si algo falla, díselo con un ejemplo concreto y pide los
 ajustes de a uno.
 

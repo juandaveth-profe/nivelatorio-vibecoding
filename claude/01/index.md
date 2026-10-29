@@ -43,8 +43,10 @@ nuestra. Todo con un mismo método de cuatro pasos: **explorar → planear → c
    - [Paso 8. Aprueba el plan y míralo construir](#paso-8)
    - [Paso 9. Que Claudio la pruebe en Chrome](#paso-9)
    - [La mesa después de construir (Claudio Tókenez)](#mesa-2)
-9. [Parte 4 · Commit](#parte-4)
+9. [Parte 4 · Commit y GitHub](#parte-4)
    - [Paso 10. Revisión y commit](#paso-10)
+   - [Paso 11. Conecta Claudio con tu GitHub](#paso-11)
+   - [Paso 12. Sube tu app a GitHub](#paso-12)
 10. [Taller](#taller)
 11. [Problemas frecuentes](#problemas)
 12. [Glosario](#glosario)
@@ -65,7 +67,7 @@ nuestra. Todo con un mismo método de cuatro pasos: **explorar → planear → c
 1. **Victoria 1:** Spliit en tu computador y Claude Code abierto en modo plan.
 2. **Victoria 2:** Claude te explica cómo Spliit calcula quién le debe a quién.
 3. **Victoria 3:** Claudio prueba tu app en Chrome y la app dice quién debe cuánto.
-4. **Victoria 4:** tu primer commit, hecho con Claude, aparece en `git log`.
+4. **Victoria 4:** tu primer commit, hecho con Claudio, aparece en tu repositorio de GitHub.
 
 Vamos de a una. Lo que no se explica hoy, funciona igual: **confía en la magia**.
 
@@ -355,26 +357,111 @@ En el [pad](https://pad.riseup.net/p/vibe-coding-sesiones-con-claudio-29-oct) es
 
 <a id="parte-4"></a>
 
-## Parte 4 · Commit
+## Parte 4 · Commit y GitHub
+
+Hasta ahora tu app vive solo en tu computador. En esta parte la guardas (commit) y la subes a
+GitHub (push), para que quede respaldada en internet y la puedas publicar en la sesión 2.
+
+Dos palabras que vas a ver mucho:
+
+- **Commit:** una foto de tu proyecto, guardada **en tu computador**, a la que siempre puedes volver.
+- **Push:** subir tus commits a tu **repositorio remoto** en GitHub. El remoto es la copia de tu proyecto que vive en internet.
+
+En el Nivelatorio esto lo hacía Antigravity con botones. Aquí se lo pides a Claudio en palabras,
+y él corre los comandos de `git` por ti.
 
 <a id="paso-10"></a>
 
 ### Paso 10. Revisión y commit
 
-Un **commit** es una foto de tu proyecto a la que siempre puedes volver. Antes de tomarla:
-
 1. **Pruébala tú** con un caso propio (por ejemplo, un gasto entre cuatro personas).
-2. Presiona **Shift+Tab** hasta volver a modo manual, y pega:
+2. Presiona **Shift+Tab** hasta volver a **modo manual**. Subir cosas a internet es delicado: así Claudio te pide permiso antes de cada comando.
+3. Pega este prompt:
 
-> Revisa con ojos frescos lo que hicimos, como si no lo hubieras escrito tú: ¿hay errores en las cuentas o casos que se rompan? Si todo está bien, haz el commit con un mensaje en español que explique qué hace la app.
+> Revisa con ojos frescos lo que hicimos, como si no lo hubieras escrito tú: ¿hay errores en las cuentas o casos que se rompan? Si todo está bien, haz el commit con un mensaje en español que explique qué hace la app. Si git no sabe mi nombre y mi correo, pregúntamelos y configúralos antes del commit.
 
-3. Lee lo que va a hacer y apruébalo. Después, fuera de Claude Code o con `!` adelante:
+4. Si es tu primer commit en este computador, Claudio te va a preguntar tu nombre y tu correo: usa **el mismo correo de tu cuenta de GitHub**. Lee cada comando que te propone y apruébalo.
+5. Comprueba la foto:
 
 ```
-git log
+! git log --oneline
 ```
 
-✅ **Victoria 4** cuando veas tu commit.
+El `!` al principio corre el comando directamente, sin salir de Claude Code. Debes ver una línea
+con el mensaje de tu commit.
+
+<a id="paso-11"></a>
+
+### Paso 11. Conecta Claudio con tu GitHub
+
+Para subir cosas a tu GitHub, tu computador necesita permiso de tu cuenta. Lo más fácil es
+**GitHub CLI** (`gh`), la herramienta oficial de GitHub para la terminal. Solo se hace una vez por
+computador.
+
+**1. Instala `gh`.** Abre otra terminal (deja Claude Code abierto) y usa el comando de tu sistema:
+
+| Sistema | Comando |
+|---|---|
+| **Mac** (con Homebrew) | `brew install gh` |
+| **Windows** | `winget install --id GitHub.cli` |
+| **Mac sin Homebrew o Linux** | Descarga el instalador de [cli.github.com](https://cli.github.com) |
+
+Cierra esa terminal cuando termine.
+
+**2. Inicia sesión.** De vuelta en Claude Code, escribe:
+
+```
+! gh auth login
+```
+
+Este paso lo haces **tú**, no Claudio: es tu cuenta. Responde así a las preguntas (con las flechas y Enter):
+
+1. Where do you use GitHub? → **GitHub.com**
+2. Preferred protocol → **HTTPS**
+3. Authenticate Git with your GitHub credentials? → **Yes**
+4. How would you like to authenticate? → **Login with a web browser**
+5. Copia el código de 8 caracteres que aparece, presiona Enter, pégalo en la página que se abre y autoriza.
+
+Comprueba que quedó:
+
+```
+! gh auth status
+```
+
+Debe decir `Logged in to github.com account` con tu usuario.
+
+<a id="paso-12"></a>
+
+### Paso 12. Sube tu app a GitHub
+
+Pega este prompt:
+
+> Crea un repositorio en mi GitHub llamado mi-splitwise, conéctalo como remoto de esta carpeta y sube mi commit. Usa gh. Antes de crearlo, dime si va a ser público o privado y espera mi respuesta.
+
+Lo más probable es que Claudio te proponga algo como esto:
+
+```
+gh repo create mi-splitwise --public --source=. --remote=origin --push
+```
+
+Así se lee: crea el repositorio `mi-splitwise` en tu GitHub (público), toma esta carpeta como su
+contenido, llama `origin` al remoto y sube (`push`) tus commits. Apruébalo.
+
+**¿Público o privado?** Si es público, cualquiera puede ver el código (no los gastos: esos se
+guardan solo en tu navegador). Para publicar la app gratis con GitHub Pages en la sesión 2 conviene
+que sea público. Antes de aprobar, revisa que en el código no haya datos que no quieras mostrar.
+
+Para verla en internet:
+
+```
+! gh repo view --web
+```
+
+✅ **Victoria 4** cuando veas tu `index.html` y tu commit en GitHub.
+
+**De aquí en adelante**, cada vez que hagas un cambio, el ciclo es corto: pídele a Claudio
+*"haz commit de estos cambios con un buen mensaje y súbelos a GitHub"*. Él hace el commit y el
+`git push`.
 
 <a id="taller"></a>
 
@@ -399,6 +486,10 @@ git log
 | Claudio dice "Browser extension is not connected" o "No browsers are connected" | Abre Chrome y revisa que la extensión esté iniciada con **la misma cuenta** de Claude. En Claude Code escribe `/chrome` y escoge "Reconnect extension". Si es la primera vez, cierra y abre Chrome. |
 | Claudio no puede abrir `index.html` en Chrome | En Chrome ve a `chrome://extensions`, abre los **Detalles** de la extensión de Claude y activa **Permitir acceso a las URL de archivos**. |
 | Entraste con la Claude Console (API) y no hay Chrome | La extensión solo funciona con cuentas Pro, Max, Team o Enterprise. Prueba la app a mano (paso 9). |
+| `Author identity unknown` o "please tell me who you are" | Git no sabe tu nombre. Pídele a Claudio: "configura mi nombre y correo de git" y dale los datos de tu cuenta de GitHub. |
+| `gh: command not found` | Cierra la terminal y abre una nueva después de instalar `gh`. Si sigue, repite la instalación del [paso 11](#paso-11). |
+| `Permission denied` o `403` al subir | `gh` no tiene permiso o entraste con otra cuenta. Corre `! gh auth status` y, si hace falta, `! gh auth login` otra vez. |
+| `repository already exists` | Ya tienes un repositorio con ese nombre en GitHub. Pídele a Claudio que use otro nombre, como `mi-splitwise-2`. |
 | La app no hace bien las cuentas | Dale a Claude el caso exacto que falla ("con estos gastos dice X y debería decir Y"). |
 
 <a id="glosario"></a>
@@ -415,6 +506,9 @@ git log
 - **Código abierto:** software cuyo código es público y se puede estudiar y reutilizar según su licencia.
 - **Claude in Chrome:** la extensión que deja a Claudio usar tu navegador para probar lo que construye.
 - **Commit:** una foto guardada de tu proyecto, con un mensaje que dice qué cambió.
+- **Push:** subir tus commits al repositorio remoto.
+- **Repositorio remoto:** la copia de tu proyecto que vive en GitHub.
+- **GitHub CLI (`gh`):** la herramienta oficial de GitHub para la terminal; con ella Claudio crea repositorios y sube cambios.
 
 ---
 

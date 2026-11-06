@@ -15,6 +15,7 @@ Tres sesiones para quienes tienen Claude Pro y quieren ir más allá del chat: a
 | Sesión | Tema | Video | Guía y taller |
 |---|---|---|---|
 | 1 · 29 oct | Desarma una app. Construye la tuya. | Próximamente | [Guía paso a paso](claude/01/) |
+| 2 · 5 nov | Construye como profesional | Próximamente | [Guía paso a paso](claude/02/) |
 
 ▶ **Todos los videos en una lista de YouTube:** [Vibecoding Nivelatorio](https://www.youtube.com/playlist?list=PLfSjHhGSasPg)
 

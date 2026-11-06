@@ -88,7 +88,7 @@ claude
 **¿Sin app?** Baja la del profe, la de las cuentas del viaje familiar:
 
 ```
-git clone PENDIENTE-enlace-de-la-plantilla
+git clone https://github.com/juandaveth-profe/cuentas-viaje.git
 cd cuentas-viaje
 claude
 ```
